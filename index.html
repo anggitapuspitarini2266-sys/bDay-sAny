@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Spesial Hari Lahir Putera Tsany</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Chilanka&family=Gaegu:wght@400;700&family=Montserrat:wght@400;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #1a0307; 
+            color: #4a020d; 
+            font-family: 'Gaegu', sans-serif;
+            font-size: 14pt;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #2b050b 0%, #120104 100%);
+        }
+
+        /* 1. ANIMASI FLOATING UNTUK KONTEN UTAMA POSTER */
+        .poster-container {
+            max-width: 450px;
+            width: 100%;
+            background-color: #fcf8f2; 
+            padding: 45px 30px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            border-radius: 4px;
+            position: relative;
+            text-align: center;
+            border: 2px solid #eadecc;
+            animation: floatPoster 6s ease-in-out infinite; /* Gerak mengambang halus */
+        }
+
+        @keyframes floatPoster {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); } /* Bergerak naik 6px */
+        }
+
+        .poster-clip {
+            width: 50px;
+            height: 20px;
+            background-color: #b0a496;
+            border-radius: 4px 4px 0 0;
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .poster-clip::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background-color: #fcf8f2;
+            border-radius: 50%;
+            top: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .thanks-text {
+            font-family: 'Chilanka', cursive;
+            font-size: 14pt;
+            margin-bottom: 5px;
+            color: #7a1c28;
+            position: relative;
+            display: inline-block;
+        }
+
+        .thanks-text::after {
+            content: '➔';
+            position: absolute;
+            font-size: 11pt;
+            transform: rotate(-20deg);
+            right: -25px;
+            top: 2px;
+        }
+
+        .main-heading {
+            font-family: 'Gaegu', sans-serif;
+            font-weight: 700;
+            font-size: 28pt;
+            line-height: 1.1;
+            text-transform: uppercase;
+            color: #4a020d;
+            margin: 20px 0;
+            letter-spacing: -0.5px;
+        }
+
+        /* 2. ANIMASI HIGHLIGHT BOX AGAR BERDENYUT PELAN */
+        .highlight-box {
+            border: 3px solid #4a020d;
+            border-radius: 50% / 15%; 
+            padding: 15px 20px;
+            margin: 25px auto;
+            max-width: 90%;
+            animation: pulseBox 3s ease-in-out infinite; /* Efek berdenyut lembut */
+        }
+
+        @keyframes pulseBox {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); } /* Membesar sedikit (2%) */
+        }
+
+        .date-text {
+            font-size: 26pt;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .time-text {
+            font-size: 12pt;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-top: 5px;
+            color: #7a1c28;
+        }
+
+        .venue-section {
+            font-size: 16pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 15px 0;
+            letter-spacing: 0.5px;
+        }
+
+        .venue-name {
+            font-size: 22pt;
+            color: #7a1c28;
+            display: block;
+            margin-top: 5px;
+            font-weight: 700;
+        }
+
+        /* 3. ANIMASI BERPUTAR UNTUK ELEMEN BINTANG DOODLE */
+        .doodle-star {
+            font-size: 26pt;
+            color: #4a020d;
+            display: inline-block;
+            margin: 5px 0;
+            animation: spinStar 10s linear infinite; /* Berputar perlahan */
+        }
+
+        @keyframes spinStar {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .countdown-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 9pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 25px;
+            color: #7a1c28;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 12px 0 25px 0;
+        }
+
+        .countdown-item {
+            background: #4a020d;
+            color: #fcf8f2;
+            padding: 8px 12px;
+            border-radius: 6px;
+            min-width: 60px;
+        }
+
+        .countdown-number {
+            font-size: 16pt;
+            font-weight: 700;
+            display: block;
+        }
+
+        .countdown-label {
+            font-size: 8pt;
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        .maps-btn {
+            display: inline-block;
+            background-color: #4a020d;
+            color: #fcf8f2;
+            text-decoration: none;
+            padding: 12px 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 30px;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(74,2,13,0.3);
+            border: 2px solid transparent;
+        }
+
+        .maps-btn:hover {
+            background-color: #fcf8f2;
+            color: #4a020d;
+            border: 2px solid #4a020d;
+        }
+
+        /* 4. ANIMASI IKON MUSIK BERGOYANG SAAT AKTIF */
+        .music-control {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background: rgba(74, 2, 13, 0.05);
+            border: 2px solid #4a020d;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 10;
+            animation: swayMusic 4s ease-in-out infinite; /* Efek bergoyang kecil */
+        }
+
+        @keyframes swayMusic {
+            0%, 100% { transform: rotate(-10deg); }
+            50% { transform: rotate(10deg); }
+        }
+
+        .music-control svg {
+            width: 16px;
+            height: 16px;
+            fill: #4a020d;
+        }
+
+        .footer-note {
+            font-family: 'Chilanka', cursive;
+            font-size: 14pt;
+            color: #7a1c28;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="poster-container">
+        <div class="poster-clip"></div>
+
+        <div class="music-control" id="musicBtn" onclick="toggleMusic()">
+            <svg class="playing-icon" viewBox="0 0 24 24">
+                <path d="M6 9v6h4l5 5V4l-5 5H6zm11 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+            </svg>
+            <svg class="paused-icon" viewBox="0 0 24 24" style="display:none;">
+                <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.21.05-.42.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+            </svg>
+        </div>
+
+        <audio id="bgMusic" loop>
+            <source src="https://archive.org/download/green-day-last-night-on-earth-piano/Green%20Day%20-%20Last%20Night%20On%20Earth%20%28Piano%29.mp3" type="audio/mp3">
+        </audio>
+
+        <p class="thanks-text">Special Birthday Invitation</p>
+        
+        <h1 class="main-heading">
+            Consider This<br>Your Special<br>Celebration.
+        </h1>
+
+        <div class="venue-section">
+            Venue: <span class="venue-name">Hawkers Magelang</span>
+        </div>
+
+        <div class="doodle-star">★</div>
+
+        <div class="highlight-box">
+            <div class="date-text">16.06.2026</div>
+            <div class="time-text">( 04:30 PM TO END )</div>
+        </div>
+
+        <div class="venue-section">
+            Celebrating: <span class="venue-name" style="font-size: 24pt; color: #4a020d;">Putera Tsany</span>
+        </div>
+
+        <p class="countdown-title">Counting Down</p>
+        <div class="countdown">
+            <div class="countdown-item"><span class="countdown-number" id="days">00</span><span class="countdown-label">Hari</span></div>
+            <div class="countdown-item"><span class="countdown-number" id="hours">00</span><span class="countdown-label">Jam</span></div>
+            <div class="countdown-item"><span class="countdown-number" id="minutes">00</span><span class="countdown-label">Min</span></div>
+            <div class="countdown-item"><span class="countdown-number" id="seconds">00</span><span class="countdown-label">Sec</span></div>
+        </div>
+
+        <a href="https://maps.google.com" target="_blank" class="maps-btn">Open Google Maps</a>
+
+        <p class="footer-note">Let's enjoy together</p>
+    </div>
+
+    <script>
+        const targetDate = new Date("June 16, 2026 16:30:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            if (difference < 0) {
+                return;
+            }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = String(days).padStart(2, '0');
+            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        const music = document.getElementById("bgMusic");
+        const musicBtn = document.getElementById("musicBtn");
+        const playingIcon = musicBtn.querySelector(".playing-icon");
+        const pausedIcon = musicBtn.querySelector(".paused-icon");
+
+        document.body.addEventListener('click', function() {
+            if(music.paused && !musicBtn.classList.contains('manually-paused')) {
+                playAudio();
+            }
+        }, { once: true });
+
+        function playAudio() {
+            music.play().then(() => {
+                playingIcon.style.display = "block";
+                pausedIcon.style.display = "none";
+                musicBtn.classList.remove('paused');
+            }).catch(e => console.log("Autoplay ditolak sistem browser"));
+        }
+
+        function toggleMusic() {
+            if (music.paused) {
+                playAudio();
+                musicBtn.classList.remove('manually-paused');
+            } else {
+                music.pause();
+                playingIcon.style.display = "none";
+                pausedIcon.style.display = "block";
+                musicBtn.classList.add('paused');
+                musicBtn.classList.add('manually-paused');
+            }
+        }
+    </script>
+</body>
+</html>
