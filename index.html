@@ -26,7 +26,6 @@
             background: linear-gradient(135deg, #2b050b 0%, #120104 100%);
         }
 
-        /* 1. ANIMASI FLOATING UNTUK KONTEN UTAMA POSTER */
         .poster-container {
             max-width: 450px;
             width: 100%;
@@ -37,12 +36,12 @@
             position: relative;
             text-align: center;
             border: 2px solid #eadecc;
-            animation: floatPoster 6s ease-in-out infinite; /* Gerak mengambang halus */
+            animation: floatPoster 6s ease-in-out infinite;
         }
 
         @keyframes floatPoster {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); } /* Bergerak naik 6px */
+            50% { transform: translateY(-6px); }
         }
 
         .poster-clip {
@@ -98,19 +97,18 @@
             letter-spacing: -0.5px;
         }
 
-        /* 2. ANIMASI HIGHLIGHT BOX AGAR BERDENYUT PELAN */
         .highlight-box {
             border: 3px solid #4a020d;
             border-radius: 50% / 15%; 
             padding: 15px 20px;
             margin: 25px auto;
             max-width: 90%;
-            animation: pulseBox 3s ease-in-out infinite; /* Efek berdenyut lembut */
+            animation: pulseBox 3s ease-in-out infinite;
         }
 
         @keyframes pulseBox {
             0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.02); } /* Membesar sedikit (2%) */
+            50% { transform: scale(1.02); }
         }
 
         .date-text {
@@ -143,13 +141,12 @@
             font-weight: 700;
         }
 
-        /* 3. ANIMASI BERPUTAR UNTUK ELEMEN BINTANG DOODLE */
         .doodle-star {
             font-size: 26pt;
             color: #4a020d;
             display: inline-block;
             margin: 5px 0;
-            animation: spinStar 10s linear infinite; /* Berputar perlahan */
+            animation: spinStar 10s linear infinite;
         }
 
         @keyframes spinStar {
@@ -211,6 +208,7 @@
             transition: all 0.3s ease;
             box-shadow: 0 4px 10px rgba(74,2,13,0.3);
             border: 2px solid transparent;
+            cursor: pointer;
         }
 
         .maps-btn:hover {
@@ -219,7 +217,6 @@
             border: 2px solid #4a020d;
         }
 
-        /* 4. ANIMASI IKON MUSIK BERGOYANG SAAT AKTIF */
         .music-control {
             position: absolute;
             top: 25px;
@@ -234,7 +231,7 @@
             align-items: center;
             cursor: pointer;
             z-index: 10;
-            animation: swayMusic 4s ease-in-out infinite; /* Efek bergoyang kecil */
+            animation: swayMusic 4s ease-in-out infinite;
         }
 
         @keyframes swayMusic {
@@ -303,6 +300,7 @@
             <div class="countdown-item"><span class="countdown-number" id="seconds">00</span><span class="countdown-label">Sec</span></div>
         </div>
 
+        <!-- TOMBOL GMAPS DENGAN METODE AMAN & BISA DIKLIK BERULANG KALI -->
         <a href="#" onclick="window.open('https://maps.google.com/?q=Hawkers+Steak+Magelang', '_blank'); return false;" class="maps-btn">Open Google Maps</a>
 
         <p class="footer-note">Let's enjoy together</p>
